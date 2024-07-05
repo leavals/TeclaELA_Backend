@@ -2,7 +2,7 @@ from rest_framework import viewsets, generics
 from django.contrib.auth.models import User
 from .models import Image
 from .serializers import UserSerializer, ImageSerializer, RegisterSerializer
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -22,3 +22,4 @@ class ImageViewSet(viewsets.ModelViewSet):
 
 class RegisterView(generics.CreateAPIView):
     serializer_class = RegisterSerializer
+    permission_classes = [AllowAny]
