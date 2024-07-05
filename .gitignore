@@ -1,0 +1,30 @@
+# Ignorar archivos de caché de Python
+__pycache__/
+*.py[cod]
+
+# Ignorar base de datos SQLite
+db.sqlite3
+
+# Ignorar archivos de configuración de entorno virtual
+.env
+.venv/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Ignorar logs
+*.log
+
+# Ignorar archivos de configuración de IDEs y editores
+.vscode/
+.idea/
+
+# Ignorar archivos y carpetas temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de compilación
+build/
+dist/
+*.egg-info/
