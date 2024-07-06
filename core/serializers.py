@@ -11,6 +11,7 @@ class ImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Image
         fields = ['id', 'user', 'image', 'uploaded_at']
+        read_only_fields = ['user', 'uploaded_at']
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, min_length=8)

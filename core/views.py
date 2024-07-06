@@ -13,11 +13,9 @@ class ImageViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        # Filtra las imágenes para que solo se muestren las del usuario autenticado
         return Image.objects.filter(user=self.request.user)
 
     def perform_create(self, serializer):
-        # Asigna el usuario autenticado como el propietario de la imagen
         serializer.save(user=self.request.user)
 
 class RegisterView(generics.CreateAPIView):
